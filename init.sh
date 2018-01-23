@@ -1,8 +1,21 @@
 #! /usr/bin/env bash
 
-# source <(curl https://edwinjhlee.github.io/init.sh)
+# source <(curl https://edwinjhlee.github.io/el-logic/init.sh)
 
 # source <(curl https://edwinjhlee.github.io/el-logic/lib/chalk.sh)
+
+install_me(){
+    local path=$(gen_lib_path init.sh)
+    curl https://edwinjhlee.github.io/el-logic/init.sh > $path
+    local code="source $path"
+    grep -q "$code" "$HOME/.bashrc" || echo "source $path" >> $HOME/.bashrc
+}
+
+update_me(){
+    local path=$(gen_lib_path init.sh)
+    curl https://edwinjhlee.github.io/el-logic/init.sh > $path
+    source $path
+}
 
 gen_lib_path(){
     local local_lib_root=/tmp/libs
