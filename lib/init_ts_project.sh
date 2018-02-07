@@ -1,6 +1,6 @@
 #! /bin/bash
 
-source <(curl https://edwinjhlee.github.io/lib/chalk.sh)
+source <(curl -sN https://edwinjhlee.github.io/lib/chalk.sh)
 
 # init
 RUN_CMD_WITH_STEP 1 "npm install"\
